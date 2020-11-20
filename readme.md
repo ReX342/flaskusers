@@ -166,6 +166,9 @@ We create another file `app/templates/login.html.j2`
 We add another route to our routes.py file.
 
 ```python
+# import render_template in the beginning of your file
+from flask import render_template
+
 # added to routes.py
 
 @app.route('/login')
