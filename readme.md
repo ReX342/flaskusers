@@ -1,7 +1,10 @@
 
 # Flask project to create the most basic login possible
 
+
 ### simply downloading and running the source code (in Windows OS: Visual Studio Code application)
+# Make a file with the contents of requirements.txt (see rest of this project)
+# If your pip is out of date, use: python -m pip install --upgrade pip
 
 ```bash
 python -m venv venv
@@ -12,6 +15,7 @@ flask run
 
 # Creating and activating the virtual environment
 
+For Linux:
 Create a virtual environment and activate it.
 
 ```bash
@@ -19,7 +23,8 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-For windows the activation is by executing `& ./venv/Scripts/activate.ps1`
+For windows:
+The activation is by executing `& ./venv/Scripts/activate.ps1`
 
 Once the virtual environment has been activated you can install flask and other required modules.
 
@@ -28,6 +33,7 @@ Once the virtual environment has been activated you can install flask and other 
 ```
 
 ## Create the basic files and folder layout
+Structure: __init__, routes and database are files in folder 'app'
 
 ```python
 # file: application.py
@@ -43,8 +49,8 @@ app = Flask(__init__)
 from app import routes
 from app import database
 ```
-
-Inside the app directory I also create a `routes.py` and a `database.py` file.
+Syntax: from 'directory' import 'file'. Strangely, __init__ is already in this directory and so will be the two other files (get used to this)
+Inside the app directory create a `routes.py` and a `database.py` file. (the latter will remain empty for a while; but we'll be referencing it; so don't forget to create it)
 
 ### Creating our first route.
 
@@ -59,7 +65,8 @@ def homepage():
     return "Hello world!"
 ```
 
-We test it by executing `flask run`. (Do not forget to make sure that your environment is activated first.)
+Make sure you're in your root folder (not your app subfolder) to test this:
+We test it by executing `flask run`. (Do not forget to make sure that your environment is activated first: should be the case )
 
 ```
 (venv) [user@hostname flasklogin]$ flask run
@@ -72,6 +79,7 @@ We test it by executing `flask run`. (Do not forget to make sure that your envir
 ```
 
 ### Create a run script
+For Linux:
 
 ```sh
 #!/bin/sh
@@ -80,6 +88,13 @@ We test it by executing `flask run`. (Do not forget to make sure that your envir
 source venv/bin/activate
 flask run
 ```
+For Windows:
+???
+& .\venv\Scripts\activate.ps1
+$Env:FLASK_ENV="development"
+flask run
+???
+
 
 Now we can easily start our project by executing `./run.sh`.
 
