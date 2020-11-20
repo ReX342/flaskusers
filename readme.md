@@ -1,11 +1,11 @@
 
 # Flask project to create the most basic login possible
 
-### simply downloading and running the source code
+### simply downloading and running the source code (in Windows OS: Visual Studio Code application)
 
 ```bash
 python -m venv venv
-source venv/bin/activate
+& .\venv\Scripts\activate.ps1
 pip install -r requirements.txt
 flask run
 ```
